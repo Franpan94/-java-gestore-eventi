@@ -57,10 +57,15 @@ public class Evento {
 		reservedSeats -= count;
 	}
 	
+	private String formatDate() {
+		return date.getDayOfMonth() + "/" + date.getMonth() + "/" + date.getYear();
+	}
+	
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub
-		return "Titolo evento: " + getTitle() + "\nData evento: " + getDate();
+		return "Titolo evento: " + getTitle() + "\nData evento: " + formatDate() 
+		+ "\nPosti disponibili: " + getTotalSeats();
 	}
 
 }
