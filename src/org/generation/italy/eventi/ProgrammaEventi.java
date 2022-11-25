@@ -34,12 +34,14 @@ public class ProgrammaEventi {
 		eventList.add(event);
 	}
 	
-	public void returnEventForDate(LocalDate date) {
+	public List<Evento> returnEventForDate(LocalDate date) {
 		List<Evento> eventForDate = new ArrayList<>();
 		for(Evento e : eventList) {
-			e.getDate().equals(date);
-			eventForDate.add(e);
+			if(e.getDate().equals(date)) {
+				eventForDate.add(e);
+			}
 		}
+		return eventForDate;
 	}
 	
 	public int eventsInProgram(){
@@ -54,7 +56,7 @@ public class ProgrammaEventi {
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub
-		return   "Nome evento: " + getTitleEvent() + "\nProgramma evento: " + getEventList()
-		+ "\nNumero eventi presenti in programma: " + eventsInProgram();
+		return   "Nome programma eventi: " + getTitleEvent() + "\nLista eventi: " + getEventList()
+		+ "\nNumero eventi presenti in lista: " + eventsInProgram();
 	}
 }

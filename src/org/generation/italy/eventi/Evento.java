@@ -64,7 +64,7 @@ public class Evento {
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub
-		return "\nTitolo evento: " + getTitle() + "\nData evento: " + formatDate() 
+		return "\nTitolo: " + getTitle() + "\nData: " + formatDate() 
 		+ "\nPosti disponibili: " + getTotalSeats();
 	}
 

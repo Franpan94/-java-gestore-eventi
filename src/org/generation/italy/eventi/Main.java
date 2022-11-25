@@ -66,11 +66,18 @@ public class Main {
 		pe.addEventList(e3);
 		pe.addEventList(e4);
 		pe.addEventList(e5);
+		System.out.println("Eventi programmati!");
 		System.out.println(pe);
 		
-		pe.clearEvents();
+		System.out.println("----------------------------------------");
+		
+		System.out.println("Eventi programmati per il 5 dicembre!");
+		System.out.println(pe.returnEventForDate(LocalDate.of(2023, 12, 5)));
 		
 		System.out.println("----------------------------------------");
+		
+		System.out.println("Lista eventi svuotata!");
+		pe.clearEvents();
 		System.out.println(pe);
 		
 	 }catch (Exception e) {
@@ -78,7 +85,9 @@ public class Main {
 	}
 	
 	System.out.println("----------------------------------------");*/
-	   
+	
+	 
+	//----- Milestone 4 -----
 	System.out.print("Inserisci ora(ora:minuti): ");
 	String hourStr = sc.nextLine();
 	LocalTime hour = LocalTime.parse(hourStr);
