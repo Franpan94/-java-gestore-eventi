@@ -57,7 +57,7 @@ public class Evento {
 		reservedSeats -= count;
 	}
 	
-	private String formatDate() {
+	public String formatDate() {
 		return date.getDayOfMonth() + "/" + date.getMonth() + "/" + date.getYear();
 	}
 	

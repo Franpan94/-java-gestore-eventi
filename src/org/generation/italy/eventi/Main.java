@@ -1,13 +1,16 @@
 package org.generation.italy.eventi;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.List;
 import java.util.Scanner;
 
 public class Main {
    public static void main(String[] args) {
-	/*Scanner sc = new Scanner(System.in); 
+	 //Milestone 1 e 2
 	
+	Scanner sc = new Scanner(System.in);
 	System.out.print("Titolo evento: ");
 	String title = sc.nextLine();
 	
@@ -15,7 +18,7 @@ public class Main {
 	String dateStr = sc.nextLine();
 	LocalDate date = LocalDate.parse(dateStr);
 	
-	System.out.print("Numero posti totali: ");
+	/*System.out.print("Numero posti totali: ");
 	int totalSeats = sc.nextInt();
 	
 	System.out.println("----------------------------------------");
@@ -47,14 +50,16 @@ public class Main {
 	
 	System.out.println("----------------------------------------");*/
 	
-	 try {
+	   
+	 //----- Milestone 3 -----
+	 /*try {
 		 Evento e1 = new Evento("Concerto di Cremonini", LocalDate.of(2023, 12, 5), 22);  
 		 Evento e2 = new Evento("Concerto di Ligabue", LocalDate.of(2023, 2, 6 ), 25);
 		 Evento e3 = new Evento("Concerto di Baglioni", LocalDate.of(2023, 2, 6), 80);
 		 Evento e4 = new Evento("Concerto di Boomdabash", LocalDate.of(2023, 12, 5), 120);
 		 Evento e5 = new Evento("Concerto di Alessandra Amoroso", LocalDate.of(2023, 8, 10), 34);
 		   
-		ProgrammaEventi pe = new ProgrammaEventi("Super Evento di musica");
+		ProgrammaEventi pe = new ProgrammaEventi("Festivalbar");
 		
 		pe.addEventList(e1);
 		pe.addEventList(e2);
@@ -63,7 +68,6 @@ public class Main {
 		pe.addEventList(e5);
 		System.out.println(pe);
 		
-		pe.returnEventForDate(LocalDate.of(2022, 12, 5));
 		pe.clearEvents();
 		
 		System.out.println("----------------------------------------");
@@ -71,6 +75,28 @@ public class Main {
 		
 	 }catch (Exception e) {
 		e.getMessage();
+	}
+	
+	System.out.println("----------------------------------------");*/
+	   
+	System.out.print("Inserisci ora(ora:minuti): ");
+	String hourStr = sc.nextLine();
+	LocalTime hour = LocalTime.parse(hourStr);
+	
+	System.out.print("Inserisci prezzo: ");
+	BigDecimal price = sc.nextBigDecimal();
+	
+	System.out.println("----------------------------------------");
+	
+	   try {
+		   Concerto c = new Concerto(
+				    title,  date, 100,
+				    hour, price);
+		   System.out.println("Il concerto si terrà in:");
+		   System.out.println(c);
+		   
+	   }catch (Exception e) {
+		System.err.println(e.getMessage());
 	}
 }
 }
