@@ -36,25 +36,25 @@ public class Evento {
     }
 
 	public int getTotalSeats() {
-		return totalSeats;
+		return totalSeats - reservedSeats;
 	}
 
 	public int getReservedSeats() {
 		return reservedSeats;
 	}
 	
-	public void prenota() throws Exception {
-		if(date.isBefore(LocalDate.now()) || (totalSeats == 0)) {
+	public void prenota(int count) throws Exception {
+		if(((count > totalSeats) || (count <= 0)) || date.isBefore(LocalDate.now())) {
 			throw new Exception("Evento non disponibile");
 		} 
-		reservedSeats++;
+		reservedSeats += count;
 	}
 	
-	public void disdici() throws Exception {
-		if(date.isBefore(LocalDate.now()) || (reservedSeats == 0)) {
+	public void disdici(int count) throws Exception {
+		if(((count <= 0) || (count > reservedSeats)) || date.isBefore(LocalDate.now())) {
 			throw new Exception("Evento non disponibile");
 		} 
-		reservedSeats--;
+		reservedSeats -= count;
 	}
 	
 	@Override
