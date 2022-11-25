@@ -42,17 +42,19 @@ public class ProgrammaEventi {
 		}
 	}
 	
-	public void eventsInProgram(){
-		eventList.size();
+	public int eventsInProgram(){
+		return eventList.size();
 	}
 	
 	public void clearEvents() {
 		eventList.clear();
 	}
 	
+	
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub
-		return   "Nome evento: " + getTitleEvent() + "\nProgramma evento: " + getEventList();
+		return   "Nome evento: " + getTitleEvent() + "\nProgramma evento: " + getEventList()
+		+ "\nNumero eventi presenti in programma: " + eventsInProgram();
 	}
 }

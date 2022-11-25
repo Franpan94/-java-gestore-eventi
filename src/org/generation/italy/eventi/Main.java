@@ -1,6 +1,7 @@
 package org.generation.italy.eventi;
 
 import java.time.LocalDate;
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
@@ -47,13 +48,27 @@ public class Main {
 	System.out.println("----------------------------------------");*/
 	
 	 try {
-		 Evento e1 = new Evento("Concerto", LocalDate.of(2023, 12, 5), 22);  
-		 Evento e2 = new Evento("Giochi", LocalDate.of(2023, 8, 10), 22);
-		 Evento e3 = new Evento("Festa", LocalDate.of(2023, 2, 6), 22);
+		 Evento e1 = new Evento("Concerto di Cremonini", LocalDate.of(2023, 12, 5), 22);  
+		 Evento e2 = new Evento("Concerto di Ligabue", LocalDate.of(2023, 2, 6 ), 25);
+		 Evento e3 = new Evento("Concerto di Baglioni", LocalDate.of(2023, 2, 6), 80);
+		 Evento e4 = new Evento("Concerto di Boomdabash", LocalDate.of(2023, 12, 5), 120);
+		 Evento e5 = new Evento("Concerto di Alessandra Amoroso", LocalDate.of(2023, 8, 10), 34);
 		   
-		ProgrammaEventi pe = new ProgrammaEventi("Super Evento");
+		ProgrammaEventi pe = new ProgrammaEventi("Super Evento di musica");
+		
 		pe.addEventList(e1);
+		pe.addEventList(e2);
+		pe.addEventList(e3);
+		pe.addEventList(e4);
+		pe.addEventList(e5);
 		System.out.println(pe);
+		
+		pe.returnEventForDate(LocalDate.of(2022, 12, 5));
+		pe.clearEvents();
+		
+		System.out.println("----------------------------------------");
+		System.out.println(pe);
+		
 	 }catch (Exception e) {
 		e.getMessage();
 	}
