@@ -1,6 +1,5 @@
 package org.generation.italy.eventi;
 
-import java.awt.Event;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -50,6 +49,16 @@ public class ProgrammaEventi {
 	
 	public void clearEvents() {
 		eventList.clear();
+	}
+	
+	public List<Evento> getEventEquals(LocalDate date, String title) {
+		List<Evento> listDateAndTitle = new ArrayList<>();
+		for(Evento e : eventList) {
+			if((e.getDate().equals(date)) && (e.getTitle().equals(title))){
+				listDateAndTitle.add(e);
+			}
+		}
+		return listDateAndTitle;
 	}
 	
 	

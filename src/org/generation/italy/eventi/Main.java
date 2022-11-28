@@ -10,7 +10,7 @@ public class Main {
    public static void main(String[] args) {
 	 //Milestone 1 e 2
 	
-	Scanner sc = new Scanner(System.in);
+	/*Scanner sc = new Scanner(System.in);
 	System.out.print("Titolo evento: ");
 	String title = sc.nextLine();
 	
@@ -52,12 +52,13 @@ public class Main {
 	
 	   
 	 //----- Milestone 3 -----
-	 /*try {
+	 try {
 		 Evento e1 = new Evento("Concerto di Cremonini", LocalDate.of(2023, 12, 5), 22);  
 		 Evento e2 = new Evento("Concerto di Ligabue", LocalDate.of(2023, 2, 6 ), 25);
 		 Evento e3 = new Evento("Concerto di Baglioni", LocalDate.of(2023, 2, 6), 80);
 		 Evento e4 = new Evento("Concerto di Boomdabash", LocalDate.of(2023, 12, 5), 120);
-		 Evento e5 = new Evento("Concerto di Alessandra Amoroso", LocalDate.of(2023, 8, 10), 34);
+		 Evento e5 = new Evento("Concerto di Alessandra Amoroso", LocalDate.of(2023, 8, 10), 74);
+		 Evento e6 = new Evento("Concerto di Alessandra Amoroso", LocalDate.of(2023, 8, 10), 34);
 		   
 		ProgrammaEventi pe = new ProgrammaEventi("Festivalbar");
 		
@@ -66,6 +67,7 @@ public class Main {
 		pe.addEventList(e3);
 		pe.addEventList(e4);
 		pe.addEventList(e5);
+		pe.addEventList(e6);
 		System.out.println("Eventi programmati!");
 		System.out.println(pe);
 		
@@ -73,6 +75,11 @@ public class Main {
 		
 		System.out.println("Eventi programmati per il 5 dicembre!");
 		System.out.println(pe.returnEventForDate(LocalDate.of(2023, 12, 5)));
+		
+		System.out.println("----------------------------------------");
+		
+		System.out.println("Concerti di Alessandra Amoroso programmati per il 10 agosto!");
+		System.out.println(pe.getEventEquals(LocalDate.of(2023, 8, 10), "Concerto di Alessandra Amoroso"));
 		
 		System.out.println("----------------------------------------");
 		
@@ -84,11 +91,11 @@ public class Main {
 		e.getMessage();
 	}
 	
-	System.out.println("----------------------------------------");*/
+	System.out.println("----------------------------------------");
 	
 	 
 	//----- Milestone 4 -----
-	System.out.print("Inserisci ora(ora:minuti): ");
+	/*System.out.print("Inserisci ora(ora:minuti): ");
 	String hourStr = sc.nextLine();
 	LocalTime hour = LocalTime.parse(hourStr);
 	
@@ -106,6 +113,6 @@ public class Main {
 		   
 	   }catch (Exception e) {
 		System.err.println(e.getMessage());
-	}
+	}*/
 }
 }

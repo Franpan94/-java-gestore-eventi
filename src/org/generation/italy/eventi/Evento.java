@@ -1,6 +1,8 @@
 package org.generation.italy.eventi;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Evento {
      private String title;
