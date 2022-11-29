@@ -52,7 +52,7 @@ public class Main {
 	
 	   
 	 //----- Milestone 3 -----
-	 try {
+	 /*try {
 		 Evento e1 = new Evento("Concerto di Cremonini", LocalDate.of(2023, 12, 5), 22);  
 		 Evento e2 = new Evento("Concerto di Ligabue", LocalDate.of(2023, 2, 6 ), 25);
 		 Evento e3 = new Evento("Concerto di Baglioni", LocalDate.of(2023, 2, 6), 80);
@@ -114,5 +114,50 @@ public class Main {
 	   }catch (Exception e) {
 		System.err.println(e.getMessage());
 	}*/
+	
+	//Milestone 5
+	
+	 
+	try {
+		 Evento e1 = new Evento("Concerto di Cremonini", LocalDate.of(2023, 12, 5), 22);  
+		 Evento e2 = new Evento("Concerto di Ligabue", LocalDate.of(2023, 2, 6 ), 25);
+		 Evento e3 = new Evento("Concerto di Baglioni", LocalDate.of(2023, 2, 6), 80);
+		 Evento e4 = new Evento("Concerto di Boomdabash", LocalDate.of(2023, 12, 5), 120);
+		 Evento e5 = new Evento("Concerto di Alessandra Amoroso", LocalDate.of(2023, 8, 10), 74);
+		 Evento e6 = new Evento("Concerto di Alessandra Amoroso", LocalDate.of(2023, 8, 10), 34);
+		 Evento e7 = new Evento("Concerto di Fedez", LocalDate.of(2023, 12, 25), 95);
+		 Evento e8 = new Evento("Concerto di Rocco Hunt", LocalDate.of(2023, 10, 12), 56);
+		 
+		 ProgrammaEventiUnici peu = new ProgrammaEventiUnici("Evviva la musica!");
+		 peu.addEventList(e6);
+		 peu.addEventList(e5);
+		 peu.addEventList(e4);
+		 peu.addEventList(e3);
+		 peu.addEventList(e2);
+		 peu.addEventList(e1);
+		 peu.addEventList(e7);
+		 peu.addEventList(e8);
+		 System.out.println("Eventi unici programmati: " + peu);
+
+		 System.out.println("----------------------------------------");
+		 
+		 System.out.println("Evento con il numero massimo di posti totali! " + peu.getMaxSeatsTotalEvent());
+		 
+		 System.out.println("----------------------------------------");
+		 
+		 System.out.println("Evento con il numero minimo di posti totali! " + peu.getMinSeatsTotalEvent());
+		 
+		 System.out.println("----------------------------------------");
+		 
+		 System.out.println("Primo evento disponibile in ordine temporale: " + peu.getFirstEventForDate());
+		 
+         System.out.println("----------------------------------------");
+		 
+		 System.out.println("Ultimo evento disponibile in ordine temporale: " + peu.getLastEventForDate());
+		 
+	} catch (Exception e) {
+		System.err.println(e.getMessage());
+	}
+	
 }
 }

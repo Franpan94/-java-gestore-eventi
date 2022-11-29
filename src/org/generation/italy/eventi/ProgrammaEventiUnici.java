@@ -12,14 +12,15 @@ public class ProgrammaEventiUnici {
      
      public ProgrammaEventiUnici(String title) {
     	 newEventList = new HashSet<>();
+    	 setTitle(title);
      }
      
      public void addEventList(Evento e) {
     	 newEventList.add(e);
      }
      
-     public void sizeEventList() {
-    	 newEventList.size();
+     public int programEventList() {
+    	 return newEventList.size();
      }
      
      public void clearEventList() {
@@ -50,6 +51,61 @@ public class ProgrammaEventiUnici {
 			}
 		}
 		return listEventDateAndTitle;
+	}
+	
+	public Evento getMaxSeatsTotalEvent() {
+		int maxValue = Integer.MIN_VALUE;
+		Evento maxEvent = null;
+		for(Evento e : newEventList) {
+			if(maxValue < e.getTotalSeats()) {
+				maxValue = e.getTotalSeats();
+				maxEvent = e;	
+			}
+		}
+		return maxEvent;
+	}
+	
+	public Evento getMinSeatsTotalEvent() {
+		int minValue = Integer.MAX_VALUE;
+		Evento minEvent = null;
+		for(Evento e : newEventList) {
+			if(minValue > e.getTotalSeats()) {
+				minValue = e.getTotalSeats();
+				minEvent = e;	
+			}
+		}
+		return minEvent;
+	}
+	
+	public Evento getFirstEventForDate() {
+		LocalDate firstDate = LocalDate.MAX;
+		Evento firstEvent = null;
+		for(Evento e : newEventList) {
+			if(firstDate.isAfter(e.getDate())) {
+				firstDate = e.getDate();
+				firstEvent = e;
+			}
+		}
+		return firstEvent;
+	}
+	
+	public Evento getLastEventForDate() {
+		LocalDate lastDate = LocalDate.MIN;
+		Evento lastEvent = null;
+		for(Evento e : newEventList) {
+			if(lastDate.isBefore(e.getDate())) {
+				lastDate = e.getDate();
+				lastEvent = e;
+			}
+		}
+		return lastEvent;
+	}
+	
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return "\nNome programma eventi: " + getTitle() + "\nLista eventi: " + getNewEventList()
+		+ "\nNumero eventi presenti in lista: " + programEventList();
 	}
      
 }
